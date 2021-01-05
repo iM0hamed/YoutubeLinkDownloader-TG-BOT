@@ -1,9 +1,6 @@
 const { Telegraf } = require('telegraf');
 const ytdl = require('ytdl-core');
-const got = require('got');
 const puppeteer = require('puppeteer');
-
-require('promise-any-polyfill');
 
 const BOT_TOKEN = '1462024491:AAFMWRTy2NZj2wQ7rakitSYzK5DQtLbGg2g';
 const PORT = 5000;
@@ -41,7 +38,7 @@ bot.startWebhook(`/bot/${BOT_TOKEN}`, null, PORT);
 bot.launch();
 
 const findYoutubeDownloadLink = async (youtubeLink) => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     const page = await browser.newPage();
 
     await page.goto('https://ytmp3.cc/en13/');
