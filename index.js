@@ -3,7 +3,7 @@ const ytdl = require('ytdl-core');
 const puppeteer = require('puppeteer');
 
 const BOT_TOKEN = '1462024491:AAFMWRTy2NZj2wQ7rakitSYzK5DQtLbGg2g';
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const URL = 'https://gentle-tundra-06412.herokuapp.com/';
 
 const bot = new Telegraf(BOT_TOKEN);
@@ -32,8 +32,8 @@ bot.on('message', async ctx => {
     await ctx.replyWithHTML('<strong>Successfully downloaded ✔️</strong>')
 })
 
-bot.telegram.setWebhook(`${URL}/bot${BOT_TOKEN}`);
-bot.startWebhook(`/bot${BOT_TOKEN}`, null, PORT);
+bot.telegram.setWebhook(`${URL}/${BOT_TOKEN}`);
+bot.startWebhook(`/${BOT_TOKEN}`, null, PORT);
 
 // bot.launch();
 
