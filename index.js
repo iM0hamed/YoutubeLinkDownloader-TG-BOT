@@ -35,7 +35,7 @@ bot.on('message', async ctx => {
 bot.telegram.setWebhook(`${URL}/bot/${BOT_TOKEN}`);
 bot.startWebhook(`/bot/${BOT_TOKEN}`, null, PORT);
 
-bot.launch();
+// bot.launch();
 
 const findYoutubeDownloadLink = async (youtubeLink) => {
     const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
