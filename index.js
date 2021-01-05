@@ -5,9 +5,11 @@ const puppeteer = require('puppeteer');
 
 require('promise-any-polyfill');
 
-const token = '1462024491:AAFMWRTy2NZj2wQ7rakitSYzK5DQtLbGg2g';
+const BOT_TOKEN = '1462024491:AAFMWRTy2NZj2wQ7rakitSYzK5DQtLbGg2g';
+const PORT = 5000;
+const URL = 'https://gentle-tundra-06412.herokuapp.com/';
 
-const bot = new Telegraf(token);
+const bot = new Telegraf(BOT_TOKEN);
 
 bot.on('message', async ctx => {
     const url = ctx.message.text;
@@ -32,6 +34,9 @@ bot.on('message', async ctx => {
 
     await ctx.replyWithHTML('<strong>Successfully downloaded ✔️</strong>')
 })
+
+bot.telegram.setWebhook(`${URL}/bot/${BOT_TOKEN}`);
+bot.startWebhook(`/bot/${BOT_TOKEN}`, null, PORT);
 
 bot.launch();
 
