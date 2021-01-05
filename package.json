@@ -1,0 +1,29 @@
+{
+  "name": "TelegramYoutubeDownloaderBot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
+    "got": "^11.8.1",
+    "jsdom": "^16.4.0",
+    "node-fetch": "^2.6.1",
+    "promise-any-polyfill": "^0.1.2",
+    "puppeteer": "^5.5.0",
+    "telegraf": "^3.38.0",
+    "ytdl-core": "^4.4.0"
+  },
+  "engines": {
+    "node": "12.x"
+  }
+}
