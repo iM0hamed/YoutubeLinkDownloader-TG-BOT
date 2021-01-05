@@ -32,9 +32,9 @@ bot.on('message', async ctx => {
     await ctx.replyWithHTML('<strong>Successfully downloaded ✔️</strong>')
 })
 
-// bot.telegram.setWebhook(`${URL}/${BOT_TOKEN}`);
-// bot.startWebhook(`/${BOT_TOKEN}`, null, PORT);
-bot.startPolling();
+bot.telegram.setWebhook(`${URL}/bot${BOT_TOKEN}`);
+bot.startWebhook(`/bot${BOT_TOKEN}`, null, PORT);
+// bot.startPolling();
 
 // bot.launch();
 
@@ -57,5 +57,3 @@ const findYoutubeDownloadLink = async (youtubeLink) => {
 
     return mp3Link;
 }
-
-findYoutubeDownloadLink('https://www.youtube.com/watch?v=dXjKh66BR2U');
