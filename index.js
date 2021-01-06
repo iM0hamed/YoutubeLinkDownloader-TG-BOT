@@ -30,7 +30,7 @@ bot.on('message', async ctx => {
 
 
     await ctx.replyWithHTML('<strong>Successfully downloaded ✔️</strong>')
-})
+});
 
 // bot.telegram.setWebhook(`${URL}/bot${BOT_TOKEN}`);
 // bot.startWebhook(`/bot${BOT_TOKEN}`, null, PORT);
