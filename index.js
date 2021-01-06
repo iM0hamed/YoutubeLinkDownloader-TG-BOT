@@ -1,12 +1,14 @@
-const { Telegraf } = require('telegraf');
+const { Composer } = require('micro-bot');
+
+// const { Telegraf } = require('telegraf');
 const ytdl = require('ytdl-core');
 const puppeteer = require('puppeteer');
 
-const BOT_TOKEN = '1462024491:AAFMWRTy2NZj2wQ7rakitSYzK5DQtLbGg2g';
-const PORT = process.env.PORT || 5000;
+const BOT_TOKEN = process.env.BOT_TOKEN || '1462024491:AAFMWRTy2NZj2wQ7rakitSYzK5DQtLbGg2g';
 const URL = 'https://gentle-tundra-06412.herokuapp.com/';
 
-const bot = new Telegraf(BOT_TOKEN);
+// const bot = new Telegraf(BOT_TOKEN);
+const bot = new Composer;
 
 bot.on('message', async ctx => {
     const url = ctx.message.text;
@@ -36,8 +38,6 @@ bot.on('message', async ctx => {
 // bot.startWebhook(`/bot${BOT_TOKEN}`, null, PORT);
 // bot.startPolling();
 
-bot.launch();
-
 const findYoutubeDownloadLink = async (youtubeLink) => {
     const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
     const page = await browser.newPage();
@@ -57,3 +57,6 @@ const findYoutubeDownloadLink = async (youtubeLink) => {
 
     return mp3Link;
 }
+
+// bot.launch();
+module.exports = bot;
