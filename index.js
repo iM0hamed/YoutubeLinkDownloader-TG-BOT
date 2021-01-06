@@ -4,8 +4,8 @@ const { Composer } = require('micro-bot');
 const ytdl = require('ytdl-core');
 const puppeteer = require('puppeteer');
 
-const BOT_TOKEN = process.env.BOT_TOKEN || '1462024491:AAFMWRTy2NZj2wQ7rakitSYzK5DQtLbGg2g';
-const URL = 'https://gentle-tundra-06412.herokuapp.com/';
+const BOT_TOKEN = process.env.BOT_TOKEN || '1324514451:AAFlWAGkQ_czXf-Gj8DNFQt1xD8nWY0xVcs';
+const URL = 'https://yapiv2.herokuapp.com/';
 
 // const bot = new Telegraf(BOT_TOKEN);
 const bot = new Composer;
